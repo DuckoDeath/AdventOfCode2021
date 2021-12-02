@@ -8,6 +8,7 @@ namespace Puzzle1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Puzzle 1");
             var lines = File.ReadAllLines(@"..\..\input.txt").Select(x=>int.Parse(x));
             Console.WriteLine("Lines: " + lines.Count());
 
@@ -16,6 +17,7 @@ namespace Puzzle1
             }).Sum();
             Console.WriteLine("Part One");
             Console.WriteLine("Answer:" + count);
+            Console.WriteLine();
 
             count = lines.SelectWithPreviousQuad((one, two, three, four) => {
                 return two + three + four > one + two + three ? 1 : 0;
@@ -23,6 +25,7 @@ namespace Puzzle1
             Console.WriteLine("Part Two");
             Console.WriteLine("Answer:" + count);
 
+            Console.WriteLine();
             Console.WriteLine("Press any key");
             Console.ReadKey();
         }

@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{440B492F-3F36-47CD-BBDA-DED1A4E4F927}</ProjectGuid>
+    <ProjectGuid>{7C67956F-AC36-4843-BAA2-1F24010C3EC8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Puzzle1</RootNamespace>
-    <AssemblyName>Puzzle1</AssemblyName>
+    <RootNamespace>Puzzle3</RootNamespace>
+    <AssemblyName>Puzzle3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,12 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{2a432d9a-4aa8-4602-98a5-27d0f64b859a}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
