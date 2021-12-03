@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -112,8 +113,8 @@ namespace Puzzle3
 
             Console.WriteLine("oLines Count: " + oLines.Count);
             Console.WriteLine("sLines Count: " + sLines.Count);
-            var oRating = GetIntFromBinary(oLines.First().ToCharArray());
-            var sRating = GetIntFromBinary(sLines.First().ToCharArray());
+            var oRating = Utils.GetIntFromBinary(oLines.First().ToCharArray());
+            var sRating = Utils.GetIntFromBinary(sLines.First().ToCharArray());
             Console.WriteLine("oRating binary: " + oLines.First());
             Console.WriteLine("oRating: " + oRating);
             Console.WriteLine("co2Rating binary: " + sLines.First());
@@ -122,20 +123,6 @@ namespace Puzzle3
             Console.WriteLine("Answer: " + result);
             Console.WriteLine();
             return result;
-        }
-
-        private static int GetIntFromBinary(char[] parts)
-        {
-            var multiplier = 1;
-            var result = 0;
-            for (int i = parts.Length - 1; i >= 0; i--)
-            {
-                var val = int.Parse(parts[i].ToString());
-                result += (multiplier * val);
-                multiplier *= 2;
-            }
-            return result;
-
         }
     }
 }
