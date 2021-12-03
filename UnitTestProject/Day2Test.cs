@@ -9,14 +9,14 @@ namespace UnitTestProject
         [TestMethod]
         public void TestExamplePart1()
         {
-            var result = Program.ExecutePart1(@"..\..\input2.txt");
+            var result = Program.ExecutePart1(@"..\..\example2.txt");
             Assert.AreEqual(150, result);
         }
 
         [TestMethod]
         public void TestExamplePart2()
         {
-            var result = Program.ExecutePart2(@"..\..\input2.txt");
+            var result = Program.ExecutePart2(@"..\..\example2.txt");
             Assert.AreEqual(900, result);
         }
 
