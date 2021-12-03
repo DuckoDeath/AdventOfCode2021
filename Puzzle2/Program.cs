@@ -9,9 +9,21 @@ namespace Puzzle2
         static void Main(string[] args)
         {
             Console.WriteLine("Puzzle 2");
-            var lines = File.ReadAllLines(@"..\..\input.txt");
+            Console.WriteLine();
+            ExecutePart1(@"..\..\input.txt");
+            ExecutePart2(@"..\..\input.txt");
+
+            Console.WriteLine("Press any key");
+            Console.ReadKey();
+        }
+
+
+        public static int ExecutePart1(string filename)
+        {
+            var lines = File.ReadAllLines(filename);
             Console.WriteLine("Lines: " + lines.Count());
-            var instructions = lines.Select(x => {
+            var instructions = lines.Select(x =>
+            {
                 var parts = x.Split(' ');
                 return new Instruction { Direction = (DirectionEnum)Enum.Parse(typeof(DirectionEnum), parts[0]), Amount = int.Parse(parts[1]) };
             }).ToList();
@@ -35,12 +47,25 @@ namespace Puzzle2
             Console.WriteLine("Part One");
             Console.WriteLine("Position: " + pos);
             Console.WriteLine("Depth: " + depth);
-            Console.WriteLine("Answer: " + pos * depth);
+            var result = pos * depth;
+            Console.WriteLine("Answer: " + result);
+            return result;
+        }
+
+        public static int ExecutePart2(string filename)
+        {
+            Console.WriteLine("Puzzle 2");
             Console.WriteLine();
 
-
-            pos = 0;
-            depth = 0;
+            var lines = File.ReadAllLines(filename);
+            Console.WriteLine("Lines: " + lines.Count());
+            var instructions = lines.Select(x =>
+            {
+                var parts = x.Split(' ');
+                return new Instruction { Direction = (DirectionEnum)Enum.Parse(typeof(DirectionEnum), parts[0]), Amount = int.Parse(parts[1]) };
+            }).ToList();
+            var pos = 0;
+            var depth = 0;
             var aim = 0;
             foreach (var i in instructions)
             {
@@ -62,10 +87,10 @@ namespace Puzzle2
             Console.WriteLine("Position: " + pos);
             Console.WriteLine("Depth: " + depth);
             Console.WriteLine("Aim: " + aim);
-            Console.WriteLine("Answer: " + pos * depth);
+            var result = pos * depth;
+            Console.WriteLine("Answer: " + result);
             Console.WriteLine();
-            Console.WriteLine("Press any key");
-            Console.ReadKey();
+            return result;
         }
     }
 }

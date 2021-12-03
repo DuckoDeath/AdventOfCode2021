@@ -10,13 +10,24 @@ namespace Puzzle3
         static void Main(string[] args)
         {
             Console.WriteLine("Puzzle 3");
-            var lines = File.ReadAllLines(@"..\..\input.txt");
-            Console.WriteLine("Lines: " + lines.Count());
+            Console.WriteLine();
+            ExecutePart1(@"..\..\input.txt");
+            ExecutePart2(@"..\..\input.txt");
+
+            Console.WriteLine("Press any key");
+            Console.ReadKey();
+        }
+
+        public static int ExecutePart1(string filename)
+        {
             Console.WriteLine("Part One");
+            var lines = File.ReadAllLines(filename);
+            Console.WriteLine("Lines: " + lines.Count());
 
             var lineLen = lines.First().ToCharArray().Length;
             Dictionary<int, int> columns = new Dictionary<int, int>();
-            for (int i = 0; i < lineLen; i++) {
+            for (int i = 0; i < lineLen; i++)
+            {
                 columns.Add(i, 0);
             }
             var lineCount = lines.Count();
@@ -25,7 +36,7 @@ namespace Puzzle3
                 var parts = l.ToCharArray().Select(x => int.Parse(x.ToString())).ToList();
                 var len = parts.Count;
 
-                for (int i=0; i < len; i++)
+                for (int i = 0; i < len; i++)
                 {
                     var p = parts[i];
                     columns[i] += p;
@@ -34,13 +45,14 @@ namespace Puzzle3
             var multiplier = 1;
             var gamma = 0;
             var epsilon = 0;
-            for (int i=columns.Count - 1; i >=0;i--)
+            for (int i = columns.Count - 1; i >= 0; i--)
             {
                 var val = columns[i];
                 if (val > (lineCount / 2))
                 {
                     gamma += multiplier;
-                } else
+                }
+                else
                 {
                     epsilon += multiplier;
                 }
@@ -49,10 +61,18 @@ namespace Puzzle3
 
             Console.WriteLine("Gamma: " + gamma);
             Console.WriteLine("Epsilon: " + epsilon);
-            Console.WriteLine("Answer: " + (gamma * epsilon));
+            var result = (gamma * epsilon);
+            Console.WriteLine("Answer: " + result);
             Console.WriteLine();
+            return result;
+        }
 
+        public static int ExecutePart2(string filename)
+        {
             Console.WriteLine("Part Two");
+            var lines = File.ReadAllLines(filename);
+            Console.WriteLine("Lines: " + lines.Count());
+            var lineLen = lines.First().ToCharArray().Length;
 
             var idx = 0;
             var oLines = lines.ToList();
@@ -65,7 +85,7 @@ namespace Puzzle3
                 {
                     var parts = l.ToCharArray().Select(x => int.Parse(x.ToString())).ToList();
                     numOfOnes += parts[idx];
-                    numOfZeros += parts[idx]==1 ? 0 : 1;
+                    numOfZeros += parts[idx] == 1 ? 0 : 1;
                 }
                 var chr = numOfOnes >= numOfZeros ? '1' : '0';
                 oLines = oLines.Where(x => x.ToCharArray()[idx] == chr).ToList();
@@ -98,9 +118,10 @@ namespace Puzzle3
             Console.WriteLine("oRating: " + oRating);
             Console.WriteLine("co2Rating binary: " + sLines.First());
             Console.WriteLine("co2Rating: " + sRating);
-            Console.WriteLine("Answer: " + (oRating * sRating));
-            Console.WriteLine("Press any key");
-            Console.ReadKey();
+            var result = (oRating * sRating);
+            Console.WriteLine("Answer: " + result);
+            Console.WriteLine();
+            return result;
         }
 
         private static int GetIntFromBinary(char[] parts)
