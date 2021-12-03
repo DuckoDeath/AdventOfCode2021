@@ -7,12 +7,31 @@ namespace UnitTestProject
     public class Day1Test
     {
         [TestMethod]
-        public void TestDay1()
+        public void TestExamplePart1()
         {
             var result = Program.ExecutePart1(@"..\..\input1.txt");
             Assert.AreEqual(7, result);
-            result = Program.ExecutePart2(@"..\..\input1.txt");
+        }
+
+        [TestMethod]
+        public void TestExamplePart2()
+        {
+            var result = Program.ExecutePart2(@"..\..\input1.txt");
             Assert.AreEqual(5, result);
+        }
+
+        [TestMethod]
+        public void TestActualPart1()
+        {
+            var result = Program.ExecutePart1(@"..\..\..\Puzzle1\input.txt");
+            Assert.AreEqual(1559, result);
+        }
+
+        [TestMethod]
+        public void TestActualPart2()
+        {
+            var result = Program.ExecutePart2(@"..\..\..\Puzzle1\input.txt");
+            Assert.AreEqual(1600, result);
         }
     }
 }
