@@ -67,7 +67,7 @@ namespace Puzzle4
                 for (int j = 0; j < 5; j++)
                 {
                     var space = Spaces[i, j];
-                    Console.Write(space.Marked ? "X" : "O");
+                    Console.Write(space.Marked ? "X" : space.Num.ToString());
                     Console.Write(" ");
                 }
                 Console.WriteLine();

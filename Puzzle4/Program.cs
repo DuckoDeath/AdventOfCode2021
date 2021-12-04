@@ -62,6 +62,9 @@ namespace Puzzle4
                 if (winner != null) break;
             }
             var result = winner.CalcResult() * lastNum;
+            Console.WriteLine("Winner: " + winner.CardNum);
+            Console.WriteLine("On Num: " + lastNum);
+            winner.PrintCard();
             Console.WriteLine("Answer: " + result);
             Console.WriteLine();
             return result;
@@ -118,6 +121,9 @@ namespace Puzzle4
                 toRemove.Clear();
             }
             var result = winner.CalcResult() * lastNum;
+            Console.WriteLine("Last Winner: " + winner.CardNum);
+            Console.WriteLine("On Num: " +  lastNum);
+            winner.PrintCard();
             Console.WriteLine("Answer: " + result);
             Console.WriteLine();
             return result;
