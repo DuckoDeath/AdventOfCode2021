@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day5Test.cs" />
     <Compile Include="Day4Test.cs" />
     <Compile Include="Day3Test.cs" />
     <Compile Include="Day2Test.cs" />
@@ -74,6 +75,10 @@
     <ProjectReference Include="..\Puzzle4\Puzzle4.csproj">
       <Project>{2875b411-4660-4b52-b858-a2c8b26a22fd}</Project>
       <Name>Puzzle4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Puzzle5\Puzzle5.csproj">
+      <Project>{43115b1d-fce9-4dd0-92a1-b9450f5aa62d}</Project>
+      <Name>Puzzle5</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
