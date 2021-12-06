@@ -21,58 +21,17 @@ namespace Puzzle4
         public static int ExecutePart1(string filename)
         {
             Console.WriteLine("Part One");
-            var lines = File.ReadAllLines(filename);
-            Console.WriteLine("Lines: " + lines.Count());
-            var firstLine = lines.First();
-            var numbers = firstLine.Split(',').Select(x => int.Parse(x.ToString())).ToList();
-            var otherLines = lines.Skip(1).ToList();
-            var cards = new List<Card>();
-            int idx = 1;
-            while (otherLines.Any())
-            {
-               otherLines = otherLines.Skip(1).ToList();
-                var card = new Card(idx++);
-                cards.Add(card);
-                for (int row = 0; row < 5; row++)
-                {
-                    var line = otherLines[row];
-                    var cols = line.Split(' ').Where(x => x != "").ToList();
-                    for (int i = 0; i < 5; i++)
-                    {
-                        card.Spaces[row, i] = new Space(int.Parse(cols[i]));
-                    }
-                }
-                otherLines = otherLines.Skip(5).ToList();
-            }
-
-            Card winner = null;
-            int lastNum = 0;
-            foreach (var num in numbers)
-            {
-                foreach (var card in cards)
-                {
-                    card.MarkNum(num);
-                    if (card.HasBingo())
-                    {
-                        winner = card;
-                        lastNum = num;
-                        break;
-                    }
-                }
-                if (winner != null) break;
-            }
-            var result = winner.CalcResult() * lastNum;
-            Console.WriteLine("Winner: " + winner.CardNum);
-            Console.WriteLine("On Num: " + lastNum);
-            winner.PrintCard();
-            Console.WriteLine("Answer: " + result);
-            Console.WriteLine();
-            return result;
+            return Execute(filename, false);
         }
 
         public static int ExecutePart2(string filename)
         {
             Console.WriteLine("Part Two");
+            return Execute(filename, true);
+        }
+
+        public static int Execute(string filename, bool lastWinner)
+        {
             var lines = File.ReadAllLines(filename);
             Console.WriteLine("Lines: " + lines.Count());
             var firstLine = lines.First();
@@ -107,9 +66,9 @@ namespace Puzzle4
                     card.MarkNum(num);
                     if (card.HasBingo())
                     {
-                        if (cards.Count==1)
+                        if (!lastWinner || cards.Count == 1)
                         {
-                            winner = cards.First();
+                            winner = card;
                             lastNum = num;
                             break;
                         }
@@ -122,7 +81,7 @@ namespace Puzzle4
             }
             var result = winner.CalcResult() * lastNum;
             Console.WriteLine("Last Winner: " + winner.CardNum);
-            Console.WriteLine("On Num: " +  lastNum);
+            Console.WriteLine("On Num: " + lastNum);
             winner.PrintCard();
             Console.WriteLine("Answer: " + result);
             Console.WriteLine();
