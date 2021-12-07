@@ -7,7 +7,7 @@ namespace AdventOfCodeConsole
         static void Main(string[] args)
         {
             var debug = false;
-            int day = 7;
+            int day = -1;
 
             while (true)
             {
@@ -33,6 +33,7 @@ namespace AdventOfCodeConsole
                 mi = type.GetMethod("ExecutePart2");
                 mi.Invoke(null, new object[] { $@"..\..\..\AdventOfCode\Day{day}\input.txt", debug });
 
+                day = -1;
                 Console.WriteLine("Press any key");
                 Console.ReadKey();
                 Console.Clear();

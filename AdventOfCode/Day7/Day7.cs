@@ -33,15 +33,13 @@ namespace AdventOfCode.Day7
                 var sum = 0;
                 foreach (var c in crabs)
                 {
+                    var diff = Math.Abs(c - i);
                     if (stepped)
                     {
-                        for (int j = 1; j <= Math.Abs(c - i); j++)
-                        {
-                            sum += j;
-                        }
+                        sum += (diff * (diff + 1)) / 2;
                     } else
                     {
-                        sum += Math.Abs(c - i);
+                        sum += diff;
                     }
                 }
                 cost[i] = sum;
