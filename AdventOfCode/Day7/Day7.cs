@@ -10,63 +10,47 @@ namespace AdventOfCode.Day7
         public static long ExecutePart1(string filename, bool debug = false)
         {
             Console.WriteLine("Part One");
-            return Execute(filename, 80, debug);
+            return Execute(filename, false, debug);
         }
 
         public static long ExecutePart2(string filename, bool debug = false)
         {
             Console.WriteLine("Part Two");
-            return Execute(filename, 256, debug);
+            return Execute(filename, true, debug);
         }
 
-        public static long Execute(string filename, int numOfDays, bool debug)
+        public static long Execute(string filename, bool stepped, bool debug)
         {
             var lines = File.ReadAllLines(filename);
             Console.WriteLine("Lines: " + lines.Count());
-            var fish = lines.First().Split(',').Select(x => int.Parse(x)).ToList();
-            Dictionary<int, long> fishes = CreateFishes();
-            foreach (var f in fish)
-            {
-                fishes[f]++;
-            }
+            var crabs = lines.First().Split(',').Select(x => int.Parse(x)).ToList();
 
-            for (int i = 0; i < numOfDays; i++)
+            var max = crabs.Max();
+
+            Dictionary<int, int> cost = new Dictionary<int, int>();
+            for (int i=0; i<=max; i++)
             {
-                Dictionary<int, long> newFishes = new Dictionary<int, long>();
-                foreach (var f in fishes.Keys.OrderByDescending(x => x))
+                var sum = 0;
+                foreach (var c in crabs)
                 {
-                    var cnt = fishes[f];
-                    if (f == 0)
+                    if (stepped)
                     {
-                        newFishes[8] = cnt;
-                        newFishes[6] += cnt;
-                    }
-                    else
+                        for (int j = 1; j <= Math.Abs(c - i); j++)
+                        {
+                            sum += j;
+                        }
+                    } else
                     {
-                        newFishes[f - 1] = cnt;
+                        sum += Math.Abs(c - i);
                     }
                 }
-                fishes = newFishes;
+                cost[i] = sum;
             }
 
-            long result = 0;
-            foreach (var f in fishes)
-            {
-                result += f.Value;
-            }
+            var result = cost.Values.Min();
             Console.WriteLine("Answer: " + result);
             Console.WriteLine();
             return result;
-        }
-
-        private static Dictionary<int, long> CreateFishes()
-        {
-            Dictionary<int, long> fishes = new Dictionary<int, long>();
-            for (int i = 0; i <= 8; i++)
-            {
-                fishes.Add(i, 0);
-            }
-            return fishes;
         }
     }
 }
