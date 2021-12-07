@@ -49,6 +49,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day7Test.cs" />
     <Compile Include="Day6Test.cs" />
     <Compile Include="Day5Test.cs" />
     <Compile Include="Day4Test.cs" />
@@ -61,29 +62,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Puzzle1\Puzzle1.csproj">
-      <Project>{440b492f-3f36-47cd-bbda-ded1a4e4f927}</Project>
-      <Name>Puzzle1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Puzzle2\Puzzle2.csproj">
-      <Project>{78ef8fb9-bd49-4ae6-8bce-e468d07cdb54}</Project>
-      <Name>Puzzle2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Puzzle3\Puzzle3.csproj">
-      <Project>{7c67956f-ac36-4843-baa2-1f24010c3ec8}</Project>
-      <Name>Puzzle3</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Puzzle4\Puzzle4.csproj">
-      <Project>{2875b411-4660-4b52-b858-a2c8b26a22fd}</Project>
-      <Name>Puzzle4</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Puzzle5\Puzzle5.csproj">
-      <Project>{43115b1d-fce9-4dd0-92a1-b9450f5aa62d}</Project>
-      <Name>Puzzle5</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Puzzle6\Puzzle6.csproj">
-      <Project>{96a4b8c8-cc6c-4971-a55f-f144999c21dd}</Project>
-      <Name>Puzzle6</Name>
+    <ProjectReference Include="..\AdventOfCode\AdventOfCode.csproj">
+      <Project>{21641c01-22c4-41ae-833e-9834063235ed}</Project>
+      <Name>AdventOfCode</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

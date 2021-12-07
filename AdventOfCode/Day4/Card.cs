@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Puzzle4
+namespace AdventOfCode.Day4
 {
     public class Card
     {

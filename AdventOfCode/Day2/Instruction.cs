@@ -1,4 +1,4 @@
-﻿namespace Puzzle2
+﻿namespace AdventOfCode.Day2
 {
     public class Instruction
     {

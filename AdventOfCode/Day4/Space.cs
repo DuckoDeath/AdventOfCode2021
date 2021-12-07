@@ -1,4 +1,4 @@
-﻿namespace Puzzle4
+﻿namespace AdventOfCode.Day4
 {
     public class Space
     {

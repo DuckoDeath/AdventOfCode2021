@@ -1,4 +1,4 @@
-﻿namespace Puzzle5
+﻿namespace AdventOfCode.Day5
 {
     public class Segment
     {

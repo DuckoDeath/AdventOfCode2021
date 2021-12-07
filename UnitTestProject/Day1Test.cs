@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Puzzle1;
+using AdventOfCode.Day1;
 
 namespace UnitTestProject
 {
@@ -9,28 +9,28 @@ namespace UnitTestProject
         [TestMethod]
         public void TestExamplePart1()
         {
-            var result = Program.ExecutePart1(@"..\..\example1.txt");
+            var result = Day1.ExecutePart1(@"..\..\example1.txt");
             Assert.AreEqual(7, result);
         }
 
         [TestMethod]
         public void TestExamplePart2()
         {
-            var result = Program.ExecutePart2(@"..\..\example1.txt");
+            var result = Day1.ExecutePart2(@"..\..\example1.txt");
             Assert.AreEqual(5, result);
         }
 
         [TestMethod]
         public void TestActualPart1()
         {
-            var result = Program.ExecutePart1(@"..\..\..\Puzzle1\input.txt");
+            var result = Day1.ExecutePart1(@"..\..\..\AdventOfCode\Day1\input.txt");
             Assert.AreEqual(1559, result);
         }
 
         [TestMethod]
         public void TestActualPart2()
         {
-            var result = Program.ExecutePart2(@"..\..\..\Puzzle1\input.txt");
+            var result = Day1.ExecutePart2(@"..\..\..\AdventOfCode\Day1\input.txt");
             Assert.AreEqual(1600, result);
         }
     }

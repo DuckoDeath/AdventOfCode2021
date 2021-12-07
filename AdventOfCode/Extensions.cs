@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Puzzle1
+namespace AdventOfCode
 {
     public static class Extensions
     {
