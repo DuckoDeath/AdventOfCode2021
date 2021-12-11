@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractTest.cs" />
+    <Compile Include="Day10Test.cs" />
     <Compile Include="Day9Test.cs" />
     <Compile Include="Day8Test.cs" />
     <Compile Include="Day7Test.cs" />
