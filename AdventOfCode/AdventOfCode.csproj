@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day11\Day11.cs" />
     <Compile Include="Day10\Day10.cs" />
+    <Compile Include="Day11\Point.cs" />
     <Compile Include="Day1\Day1.cs" />
     <Compile Include="Day2\Day2.cs" />
     <Compile Include="Day2\DirectionEnum.cs" />
@@ -63,6 +65,7 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Day11\input.txt" />
     <Content Include="Day10\input.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
