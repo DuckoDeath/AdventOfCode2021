@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Day13\Day13.cs" />
+    <Compile Include="Day13\Fold.cs" />
     <Compile Include="Day12\Day12.cs" />
     <Compile Include="Day12\Node.cs" />
     <Compile Include="Day11\Day11.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Day13\input.txt" />
     <Content Include="Day12\input.txt" />
     <Content Include="Day11\input.txt" />
     <Content Include="Day10\input.txt" />
