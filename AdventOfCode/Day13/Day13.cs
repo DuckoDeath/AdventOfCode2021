@@ -76,19 +76,17 @@ namespace AdventOfCode.Day13
         {
             var maxX = points.GetLength(1);
             var maxY = points.GetLength(0);
+            Console.WriteLine();
             Console.WriteLine("Y: " + maxY + ", X: " + maxX);
             Console.WriteLine("Folding " + fold.XorY + "=" + fold.Val);
             var newMaxY = maxY;
             var newMaxX = maxX;
-            bool even = false;
             if (fold.XorY=="y")
             {
-                even = maxY%2==0;
-                newMaxY = (maxY-(even ? 0 : 1)) / 2;
+                newMaxY = fold.Val;
             } else
             {
-                even = maxX % 2==0;
-                newMaxX = (maxX-(even ? 0 : 1)) / 2; 
+                newMaxX = fold.Val;
             }
             var newPoints = new int[newMaxY, newMaxX];
 
@@ -106,8 +104,8 @@ namespace AdventOfCode.Day13
                         var newP = points[y, x];
                         if (newP==1)
                         {
-                            var newY = fold.XorY=="y" ? maxY - y - 1 : y;
-                            var newX = fold.XorY=="y" ? x : maxX - x - 1;
+                            var newY = fold.XorY=="y" ? fold.Val - (y - fold.Val) : y;
+                            var newX = fold.XorY=="y" ? x : fold.Val - (x - fold.Val);
                             newPoints[newY, newX] = 1;
                         }
                     }
