@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day16\Day16.cs" />
-    <Compile Include="Day16\Node.cs" />
     <Compile Include="Day15\Node.cs" />
     <Compile Include="Day15\Day15.cs" />
     <Compile Include="Day14\Day14.cs" />
@@ -53,6 +52,9 @@
     <Compile Include="Day11\Day11.cs" />
     <Compile Include="Day10\Day10.cs" />
     <Compile Include="Day11\Point.cs" />
+    <Compile Include="Day16\LiteralPacket.cs" />
+    <Compile Include="Day16\OperatorPacket.cs" />
+    <Compile Include="Day16\Packet.cs" />
     <Compile Include="Day1\Day1.cs" />
     <Compile Include="Day2\Day2.cs" />
     <Compile Include="Day2\DirectionEnum.cs" />
